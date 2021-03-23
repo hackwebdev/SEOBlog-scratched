@@ -17,11 +17,23 @@ $ npm install -D morgan nodemon
     DATABASE_CLOUD= '< link from mongoDB atlas >'
     DATABASE_LOCAL= '< link from mongoDB local >'
     JWT_SECRET= < any random text here >
-```
 
 terminal
 $ Postman
 GET > http://localhost:8000/api
+
+auth routes
+
+POST > http://localhost:8000/api/signup
+Body > raw > JSON
+{
+"name":"sha",
+"email":"sha@gmail.com",
+"password":"123456"
+}
+Headers
+- Content-Type - application/json
+```
 
 ```
 Project from
