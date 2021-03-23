@@ -4,6 +4,9 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 require('dotenv').config()
 
+// bring routes
+const blogRoutes = require('./routes/blog')
+
 // app
 const app = express()
 
@@ -25,9 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // routes middleware
-app.get('/api', (req, res) => {
-  res.json({ time: Date().toString() })
-})
+app.use('/api', blogRoutes)
 
 // port
 const port = process.env.PORT || 8000

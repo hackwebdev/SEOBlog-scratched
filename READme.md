@@ -14,7 +14,8 @@ $ npm install -D morgan nodemon
     APP_NAME= < database name >
     PORT=8000
     CLIENT_URL=http://localhost:3000
-    MONGO_URI= '< link from mongoDB atlas >'
+    DATABASE_CLOUD= '< link from mongoDB atlas >'
+    DATABASE_LOCAL= '< link from mongoDB local >'
     JWT_SECRET= < any random text here >
 ```
 
