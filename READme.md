@@ -22,7 +22,7 @@ terminal
 $ Postman
 GET > http://localhost:8000/api
 
-auth routes
+Create signup auth routes
 
 POST > http://localhost:8000/api/signup
 Body > raw > JSON
@@ -34,6 +34,12 @@ Body > raw > JSON
 Headers
 - Content-Type - application/json
 ```
+
+Save users in the database
+
+install packages for auth and blogs
+
+$ npm install express-validator jsonwebtoken express-jwt formidable lodash slugify string-strip-html
 
 ```
 Project from
