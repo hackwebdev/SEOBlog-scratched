@@ -102,6 +102,16 @@ wrap \_app.js with <Layout>
 NOTE: npx kill-port 3000
 
 ```
+bootstrap for styling
+get bootstrap from cdnjs (i did not use)
+
+$ npm install bootstrap@next
+import bootstrap CSS file into the next js custom pages/_app.js
+
+
+```
+
+```
 Project from
 Real World SEO Web App using MERN Stack with React/Next.js for SSR by Ryan Dhungel
 ```
