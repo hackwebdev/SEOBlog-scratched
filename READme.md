@@ -86,11 +86,20 @@ GET > http://localhost:8000/api/secret > SEND
 protect certain routes
 how those routes is accessed by users with a valid token
 
+```
 FRONTEND NextJS
 $ cd frontend
 $ npm init -y
 $ npx create-next-app .
 $ npm run dev - http://localhost:3000
+
+```
+
+Page Layout
+components/Layout.js
+wrap \_app.js with <Layout>
+
+NOTE: npx kill-port 3000
 
 ```
 Project from
