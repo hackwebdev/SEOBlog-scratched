@@ -44,7 +44,7 @@ Create a validator method
 Check validation if working
 Postman
 
-- same in post signup
+- same in post signUp
 - just delete the values in name, email and password
 
 Implement the hashing of the password
@@ -54,6 +54,22 @@ $ mpm i shortid
 Postman
 POST > same in signup data > SEND
 check mongodb atlas a user has been created
+
+Implement singIn
+from .env create a JWT_SECRET= < any key >
+Postman
+POST > http://localhost:8000/api/signin
+Headers
+Content - Type - application/json
+Body > raw
+{
+"email":"sha@gmail.com",
+"password":"123456"
+}
+we get a respond token and a user info
+
+protect certain routes
+how those routes is accessed by users with a valid token
 
 ```
 Project from
