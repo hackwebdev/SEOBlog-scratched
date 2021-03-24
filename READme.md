@@ -37,9 +37,17 @@ Headers
 
 Save users in the database
 
-install packages for auth and blogs
-
+Install packages for auth and blogs
 $ npm install express-validator jsonwebtoken express-jwt formidable lodash slugify string-strip-html
+
+Create a validator method
+Check validation if working
+Postman
+
+- same in post signup
+- just delete the values in name, email and password
+
+Implement the hashing of the password
 
 ```
 Project from
