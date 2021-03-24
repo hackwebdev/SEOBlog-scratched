@@ -61,3 +61,17 @@ exports.signin = (req, res) => {
     })
   })
 }
+
+exports.signout = (req, res) => {
+  res.clearCookie('token')
+  res.json({
+    message: 'Signout success',
+  })
+}
+
+// Fixed this bug on express-jwt
+exports.requireSignin = expressJwt({
+  secret: process.env.JWT_SECRET,
+  userProperty: 'auth',
+  algorithms: ['HS256'],
+})

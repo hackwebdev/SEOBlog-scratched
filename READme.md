@@ -68,6 +68,19 @@ Body > raw
 }
 we get a respond token and a user info
 
+implement signOut
+require singIn
+Postman - singOut
+GET > http://localhost:8000/api/signout > SEND
+Postman - secret
+GET > http://localhost:8000/api/secret > SEND > cannot access
+Need to signin
+POST > http://localhost:8000/api/signin
+copy the token
+Headers > Authorization > Bearer <TOKEN>
+Access secret again
+GET > http://localhost:8000/api/secret > SEND >
+
 protect certain routes
 how those routes is accessed by users with a valid token
 
