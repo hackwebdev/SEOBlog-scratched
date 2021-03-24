@@ -49,8 +49,9 @@ Postman
 
 Implement the hashing of the password
 
+```
 Generate unique user
-$ mpm i shortid
+$ npm i shortid
 Postman
 POST > same in signup data > SEND
 check mongodb atlas a user has been created
@@ -63,8 +64,8 @@ Headers
 Content - Type - application/json
 Body > raw
 {
-"email":"sha@gmail.com",
-"password":"123456"
+    "email":"sha@gmail.com",
+    "password":"123456"
 }
 we get a respond token and a user info
 
@@ -79,10 +80,17 @@ POST > http://localhost:8000/api/signin
 copy the token
 Headers > Authorization > Bearer <TOKEN>
 Access secret again
-GET > http://localhost:8000/api/secret > SEND >
+GET > http://localhost:8000/api/secret > SEND
+```
 
 protect certain routes
 how those routes is accessed by users with a valid token
+
+FRONTEND NextJS
+$ cd frontend
+$ npm init -y
+$ npx create-next-app .
+$ npm run dev - http://localhost:3000
 
 ```
 Project from
