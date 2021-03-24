@@ -5,6 +5,7 @@
     "formidable": "^1.2.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
+    "shortid": "^2.2.16",
     "slugify": "^1.5.0",
     "string-strip-html": "^8.2.6"
   }

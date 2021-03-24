@@ -49,6 +49,12 @@ Postman
 
 Implement the hashing of the password
 
+Generate unique user
+$ mpm i shortid
+Postman
+POST > same in signup data > SEND
+check mongodb atlas a user has been created
+
 ```
 Project from
 Real World SEO Web App using MERN Stack with React/Next.js for SSR by Ryan Dhungel
