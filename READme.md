@@ -117,6 +117,21 @@ components/Header.js
 - create navbar here
 bring Header to Layout component
 
+env variables with nextjs
+next.config.js file
+    module.exports = {
+        env: {
+            APP_NAME: 'SEOBLOG',
+            API_DEVELOPMENT: 'http://localhost:8000/api',
+            PRODUCTION: false,
+        },
+    }
+to use: process.env.APP_NAME inside Header.js
+
+Note: I skip the config.js file setup
+
+
+
 ```
 
 ```
