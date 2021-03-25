@@ -108,6 +108,14 @@ get bootstrap from cdnjs (i did not use)
 $ npm install bootstrap@next
 import bootstrap CSS file into the next js custom pages/_app.js
 
+Reactstrap Navbar
+https://reactstrap.github.io/
+$ npm install --save reactstrap react react-dom
+Go to components > Navbar
+
+components/Header.js
+- create navbar here
+bring Header to Layout component
 
 ```
 
