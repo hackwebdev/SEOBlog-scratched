@@ -1,45 +1,62 @@
+import Link from 'next/link'
 import { useState } from 'react'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from 'reactstrap'
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+export const Navbar = () => {
+  const [active, setActive] = useState(false)
 
-  const toggle = () => {
-    setIsOpen(!isOpen)
+  const handleClick = () => {
+    setActive(!active)
   }
 
   return (
-    <div>
-      <Navbar color='light' light expand='md'>
-        <NavbarBrand href='/'>{process.env.APP_NAME}</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className='ml-auto' navbar>
-            <NavItem>
-              <NavLink href='/components/'>Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href='https://github.com/reactstrap/reactstrap'>
-                GitHub
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
+    <>
+      <nav className='flex items-center flex-wrap bg-gray-100  p-3 '>
+        <Link href='/'>
+          <a className='inline-flex items-center p-2 mr-4 '>
+            <span className='text-xl text-gray-600 font-bold uppercase tracking-wide'>
+              {process.env.APP_NAME}
+            </span>
+          </a>
+        </Link>
+        <button
+          className=' inline-flex p-3 lg:hidden text-gray-500 ml-auto hover:text-gray-400 outline-none'
+          onClick={handleClick}
+        >
+          <svg
+            className='w-6 h-6'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 6h16M4 12h16M4 18h16'
+            />
+          </svg>
+        </button>
+        {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+        <div
+          className={`${
+            active ? '' : 'hidden'
+          }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+        >
+          <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+            <Link href='/signin'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 '>
+                Signin
+              </a>
+            </Link>
+            <Link href='/signup'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400'>
+                Signup
+              </a>
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }
-
-export default Header

@@ -126,11 +126,16 @@ next.config.js file
             PRODUCTION: false,
         },
     }
-to use: process.env.APP_NAME inside Header.js
+to use: {process.env.APP_NAME} inside Header.js
 
 Note: I skip the config.js file setup
 
+Navigation using Link component
 
+I've decided to drop reactstrap and bootstrap
+
+Setup TailwindCSS
+$ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
 ```
 
