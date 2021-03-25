@@ -137,6 +137,12 @@ I've decided to drop reactstrap and bootstrap
 Setup TailwindCSS
 $ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
+components/SignupComponent.js
+create a signup form
+use this: https://ikartik.com/dev/nextjs-email-signup-part2
+
+
+
 ```
 
 ```
