@@ -141,6 +141,9 @@ components/SignupComponent.js
 create a signup form
 use this: https://ikartik.com/dev/nextjs-email-signup-part2
 
+https://tailwindui.com/components/application-ui/forms/form-layouts
+
+signup connect to backend with fetch
 
 
 ```
