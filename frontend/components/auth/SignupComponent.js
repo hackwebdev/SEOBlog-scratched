@@ -119,9 +119,9 @@ const SignupComponent = () => {
             placeholder='Enter your Password'
           />
         </div>
-        <div className=' py-5  text-left '>
+        <div className=' pt-5  text-left '>
           <button
-            className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-blue-800 hover:text-blue-900 bg-blue-300 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-blue-800 hover:text-blue-900 bg-blue-300 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300'
             type='submit'
           >
             Sign Up

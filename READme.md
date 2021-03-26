@@ -149,8 +149,9 @@ $ npm install isomorphic-fetch - works on both client and server side
 Display loading,success and error message
 Make SignupComponent for form only for reuseability
 
-Making o signin page
-
+Making of signin page
+when signin redirects to to homepage
+Saving user and token in cookie and local storage
 
 3:26:09
 ```
