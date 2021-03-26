@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { signup } from '../../actions/auth'
+import React, { useState } from 'react'
+import { signin } from '../../actions/auth'
 
-const SignupComponent = () => {
+const SigninComponent = () => {
   const [values, setValues] = useState({
     name: 'Sha',
     email: 'sha@gmail.com',
@@ -21,7 +21,7 @@ const SignupComponent = () => {
     setValues({ ...values, loading: true, error: false })
     const user = { name, email, password }
 
-    signup(user).then((data) => {
+    signin(user).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false })
       } else {
@@ -68,25 +68,9 @@ const SignupComponent = () => {
       ''
     )
 
-  const signupForm = () => {
+  const signinForm = () => {
     return (
       <form onSubmit={handleSubmit}>
-        <div className='mb-5'>
-          <label
-            htmlFor='email_address'
-            className='block text-sm font-medium text-gray-700'
-          >
-            Name
-          </label>
-          <input
-            onChange={handleChange('name')}
-            type='text'
-            value={name}
-            className='mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
-            aria-label='email address'
-            placeholder='Enter your name'
-          />
-        </div>
         <div className='mb-5'>
           <label
             htmlFor='email_address'
@@ -124,7 +108,7 @@ const SignupComponent = () => {
             className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-blue-800 hover:text-blue-900 bg-blue-300 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
             type='submit'
           >
-            Sign Up
+            Sign In
           </button>
         </div>
       </form>
@@ -136,9 +120,9 @@ const SignupComponent = () => {
       {showError()}
       {showLoading()}
       {showMessage()}
-      {showForm && signupForm()}
+      {showForm && signinForm()}
     </>
   )
 }
 
-export default SignupComponent
+export default SigninComponent
