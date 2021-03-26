@@ -146,7 +146,11 @@ https://tailwindui.com/components/application-ui/forms/form-layouts
 signup connect to backend with fetch
 $ npm install isomorphic-fetch - works on both client and server side
 
-Display success and error message
+Display loading,success and error message
+Make SignupComponent for form only for reuseability
+
+Making o signin page
+
 
 3:26:09
 ```
