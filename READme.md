@@ -164,6 +164,10 @@ $ npm install js-cookie
 Implement signout method
 deletes localStorage and cookies
 
+Redirect authenticated user from signin and signup
+
+Show dashboard link nav based on the user role
+
 ```
 
 ```

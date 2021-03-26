@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { signup } from '../../actions/auth'
+import { Router } from 'next/router'
+import { useEffect, useState } from 'react'
+import { isAuth, signup } from '../../actions/auth'
 
 const SignupComponent = () => {
   const [values, setValues] = useState({
@@ -42,6 +43,10 @@ const SignupComponent = () => {
   const handleChange = (name) => (e) => {
     setValues({ ...values, error: false, [name]: e.target.value })
   }
+
+  useEffect(() => {
+    isAuth() && Router.push(`/`)
+  }, [])
 
   const showLoading = () =>
     loading ? (
