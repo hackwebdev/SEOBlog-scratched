@@ -161,8 +161,9 @@ Save the token and user info in the localStorage
                           > Cookies > http://localhost:3000 > token
 $ npm install js-cookie
 
+Implement signout method
+deletes localStorage and cookies
 
-3:26:09
 ```
 
 ```

@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Router from 'next/router'
 import { useState } from 'react'
+import { signout, isAuth } from '../actions/auth'
 
 export const Navbar = () => {
   const [active, setActive] = useState(false)
@@ -38,23 +40,37 @@ export const Navbar = () => {
           </svg>
         </button>
         {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+
         <div
           className={`${
             active ? '' : 'hidden'
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
-          <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
-            <Link href='/signin'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 '>
-                Signin
-              </a>
-            </Link>
-            <Link href='/signup'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400'>
-                Signup
-              </a>
-            </Link>
-          </div>
+          {!isAuth() && (
+            <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+              <Link href='/signin'>
+                <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 '>
+                  Signin
+                </a>
+              </Link>
+              <Link href='/signup'>
+                <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 '>
+                  Signup
+                </a>
+              </Link>
+            </div>
+          )}
+
+          {isAuth() && (
+            <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+              <div
+                className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 cursor-pointer'
+                onClick={() => signout(() => Router.replace(`/signin`))}
+              >
+                Signout
+              </div>
+            </div>
+          )}
         </div>
       </nav>
     </>
