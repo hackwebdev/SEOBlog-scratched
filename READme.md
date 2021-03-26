@@ -144,8 +144,11 @@ use this: https://ikartik.com/dev/nextjs-email-signup-part2
 https://tailwindui.com/components/application-ui/forms/form-layouts
 
 signup connect to backend with fetch
+$ npm install isomorphic-fetch - works on both client and server side
 
+Display success and error message
 
+3:26:09
 ```
 
 ```
