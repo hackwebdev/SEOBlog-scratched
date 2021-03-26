@@ -151,7 +151,16 @@ Make SignupComponent for form only for reuseability
 
 Making of signin page
 when signin redirects to to homepage
+
 Saving user and token in cookie and local storage
+When you signin
+    console > Network > signin - data is displayed
+
+Save the token and user info in the localStorage
+    console > Application > LocalStorage > http://localhost:3000 > user
+                          > Cookies > http://localhost:3000 > token
+$ npm install js-cookie
+
 
 3:26:09
 ```
