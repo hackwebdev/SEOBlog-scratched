@@ -195,6 +195,13 @@ note: the user role = 1; means admin
 
 Error handler to avoid duplicates
 
+Category list read delete
+create another category
+GET > http://localhost:8000/api/categories - all categories
+GET > http://localhost:8000/api/category/category-three - single categories
+DELETE > http://localhost:8000/api/category/category-three - deletes single category
+
+
 
 ```
 
