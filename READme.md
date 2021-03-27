@@ -187,6 +187,7 @@ Postman
 POST > http://localhost:8000/api/signin
 copy the token
 Headers > Authorization > Bearer <TOKEN>
+Create Category
 POST > http://localhost:8000/api/category
     {
     "name":"category one"
@@ -201,6 +202,29 @@ GET > http://localhost:8000/api/categories - all categories
 GET > http://localhost:8000/api/category/category-three - single categories
 DELETE > http://localhost:8000/api/category/category-three - deletes single category
 
+Tags create list read and delete
+> model
+>> validator
+>>> routes
+>>>> apply as middleware in server.js
+>>>>> controllers
+
+Postman
+POST > http://localhost:8000/api/signin
+copy the token
+Headers > Authorization > Bearer <TOKEN>
+Create Category
+POST > http://localhost:8000/api/tag
+    {
+    "name":"tag one"
+    }
+note: the user role = 1; means admin
+
+Tag list read delete
+create another tag
+GET > http://localhost:8000/api/tags - all categories
+GET > http://localhost:8000/api/category/tag-one - single categories
+DELETE > http://localhost:8000/api/category/tag-three - deletes single category
 
 
 ```
