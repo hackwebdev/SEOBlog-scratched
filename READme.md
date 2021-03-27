@@ -175,6 +175,7 @@ User profile
 Postman
 GET > http://localhost:8000/api/profile
 
+Admin and user dashboard
 
 
 ```
