@@ -193,7 +193,7 @@ POST > http://localhost:8000/api/category
     }
 note: the user role = 1; means admin
 
-
+Error handler to avoid duplicates
 
 
 ```
