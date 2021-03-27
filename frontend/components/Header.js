@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className='flex items-center flex-wrap bg-gray-100  p-3 '>
+      <nav className='flex items-center justify-between flex-wrap bg-gray-100  p-3 '>
         <Link href='/'>
           <a className='inline-flex items-center p-2 mr-4 '>
             <span className='text-xl text-gray-600 font-bold uppercase tracking-wide'>
@@ -21,7 +21,7 @@ export const Navbar = () => {
           </a>
         </Link>
         <button
-          className=' inline-flex p-3 lg:hidden text-gray-500 ml-auto hover:text-gray-400 outline-none'
+          className=' inline-flex p-3 lg:hidden text-gray-500 ml-auto hover:text-gray-400 outline-none '
           onClick={handleClick}
         >
           <svg
@@ -44,7 +44,7 @@ export const Navbar = () => {
         <div
           className={`${
             active ? '' : 'hidden'
-          }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+          }   w-full lg:inline-flex lg:flex lg:w-auto`}
         >
           {!isAuth() && (
             <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
@@ -57,6 +57,26 @@ export const Navbar = () => {
                 <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 '>
                   Signup
                 </a>
+              </Link>
+            </div>
+          )}
+
+          {isAuth() && isAuth().role === 0 && (
+            <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+              <Link href='/user'>
+                <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center   hover:text-gray-400 cursor-pointer'>{`${
+                  isAuth().name
+                }'s Dashboard`}</a>
+              </Link>
+            </div>
+          )}
+
+          {isAuth() && isAuth().role === 1 && (
+            <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+              <Link href='/admin'>
+                <a className='lg:inline-flex lg:w-auto w-full px-3 py-2  text-gray-500  items-center justify-center  hover:text-gray-400 cursor-pointer'>{`${
+                  isAuth().name
+                }'s Dashboard`}</a>
               </Link>
             </div>
           )}
