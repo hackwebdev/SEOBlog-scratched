@@ -168,6 +168,15 @@ Redirect authenticated user from signin and signup
 
 Show dashboard link nav based on the user role
 
+User profile when signed in will be redirected to user dashboard
+
+Auth and admin middlewares with their own dashboards
+User profile
+Postman
+GET > http://localhost:8000/api/profile
+
+
+
 ```
 
 ```

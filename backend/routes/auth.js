@@ -18,11 +18,11 @@ router.post('/signup', userSignupValidator, runValidation, signup)
 router.post('/signin', userSigninValidator, runValidation, signin)
 router.get('/signout', signout)
 // test
-router.get('/secret', requireSignin, (req, res) => {
-  res.json({
-    // fixed the empty object issue
-    user: req.auth,
-  })
-})
+// router.get('/secret', requireSignin, (req, res) => {
+//   res.json({
+//     // fixed the empty object issue
+//     user: req.auth,
+//   })
+// })
 
 module.exports = router
