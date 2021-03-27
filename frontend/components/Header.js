@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Router from 'next/router'
+import NProgress from 'nprogress'
 import { useState } from 'react'
 import { signout, isAuth } from '../actions/auth'
 
@@ -9,6 +10,10 @@ export const Navbar = () => {
   const handleClick = () => {
     setActive(!active)
   }
+
+  Router.onRouteChangeStart = (url) => NProgress.start()
+  Router.onRouteChangeComplete = (url) => NProgress.done()
+  Router.onRouteChangeError = (url) => NProgress.done()
 
   return (
     <>

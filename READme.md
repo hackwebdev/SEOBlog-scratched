@@ -226,6 +226,9 @@ GET > http://localhost:8000/api/tags - all categories
 GET > http://localhost:8000/api/category/tag-one - single categories
 DELETE > http://localhost:8000/api/category/tag-three - deletes single category
 
+Using nprogress and css static file
+$ npm install nprogress
+
 
 ```
 
