@@ -179,7 +179,23 @@ Admin and user dashboard
 
 Protecting the routes for auth and admin user
 
-Dashboard link
+Dashboard link for user and admin
+
+Create a Blog
+Category schema routes and controllers
+Postman
+POST > http://localhost:8000/api/signin
+copy the token
+Headers > Authorization > Bearer <TOKEN>
+POST > http://localhost:8000/api/category
+    {
+    "name":"category one"
+    }
+note: the user role = 1; means admin
+
+
+
+
 ```
 
 ```
