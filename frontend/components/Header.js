@@ -3,6 +3,7 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 import { useState } from 'react'
 import { signout, isAuth } from '../actions/auth'
+import '.././node_modules/nprogress/nprogress.css'
 
 export const Navbar = () => {
   const [active, setActive] = useState(false)

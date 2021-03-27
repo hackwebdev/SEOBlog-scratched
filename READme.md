@@ -229,6 +229,7 @@ DELETE > http://localhost:8000/api/category/tag-three - deletes single category
 Using nprogress and css static file
 $ npm install nprogress
 
+nprogress import thru node_modules
 
 ```
 
