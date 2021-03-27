@@ -1,8 +1,10 @@
+import Admin from '../../components/auth/Admin'
+
 const AdminIndex = () => {
   return (
-    <div>
+    <Admin>
       <h2>Admin Dashboard</h2>
-    </div>
+    </Admin>
   )
 }
 
