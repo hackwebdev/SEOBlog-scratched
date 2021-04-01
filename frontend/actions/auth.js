@@ -17,7 +17,7 @@ export const signup = (user) => {
 }
 
 export const signin = (user) => {
-  return fetch(`${process.env.API_DEVELOPMENT}/signin`, {
+  return fetch(`${process.env.API_DEVELOPMENT}signin`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -36,7 +36,7 @@ export const signout = (next) => {
   removeLocalStorage('user')
   next()
 
-  return fetch(`${process.env.API_DEVELOPMENT}/signout`, {
+  return fetch(`${process.env.API_DEVELOPMENT}signout`, {
     method: 'GET',
   })
     .then((response) => {

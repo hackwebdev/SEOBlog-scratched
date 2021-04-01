@@ -1,5 +1,6 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import Admin from '../../../components/auth/Admin'
+import Category from '../../../components/crud/Category'
 
 const CategoryTag = () => {
   return (
@@ -11,7 +12,7 @@ const CategoryTag = () => {
           </h2>
           <main className='md:col-span-6  '>
             <div className=' rounded-t relative -mb-px block border p-4 border-grey'>
-              <p>Categories</p>
+              <Category />
             </div>
           </main>
           <aside className='md:col-span-6 md:pt-0 p-2 border-2 border-blue-600'>

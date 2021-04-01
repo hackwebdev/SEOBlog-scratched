@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 module.exports = async () => {
   try {
-    const conn = await mongoose.connect(process.env.DATABASE_CLOUD, {
+    const conn = await mongoose.connect(process.env.DATABASE_LOCAL, {
       dbName: process.env.DB_NAME,
       useNewUrlParser: true,
       useUnifiedTopology: true,
