@@ -236,11 +236,13 @@ TailwindCSS grid layout:
     https://dev.to/hannahsaurusrex/sidebar-layout-using-grid-tailwindcss-m6d
     https://tailwindcomponents.com/component/bootstrap-4-list-group-clone
 
-59 Create category
-
 crud/Category.js
     getCategories data.error undefined
     Fix: setValues({ error: true })
+
+Create Tags same procedure as Categories
+
+65. Blog Schema
 
 ```
 

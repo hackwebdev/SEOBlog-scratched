@@ -1,64 +1,62 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
-import { isAuth, getCookie } from '../../actions/auth'
-import { create, getCategories, removeCategory } from '../../actions/category'
+import { getCookie } from '../../actions/auth'
+import { create, getTags, removeTag } from '../../actions/tag'
 
-const Category = () => {
+const Tag = () => {
   const [values, setValues] = useState({
     name: '',
     error: false,
     success: false,
-    categories: [],
+    tags: [],
     removed: false,
     reload: false,
   })
 
-  const { name, error, success, categories, removed, reload } = values
+  const { name, error, success, tags, removed, reload } = values
   const token = getCookie('token')
 
   useEffect(() => {
-    loadCategories()
+    loadTags()
   }, [reload])
 
-  const loadCategories = () => {
-    getCategories().then((data) => {
+  const loadTags = () => {
+    getTags().then((data) => {
       if (data.error) {
-        console.log(data.error)
         setValues({ error: true })
+        console.log(data.error)
       } else {
-        setValues({ ...values, categories: data })
+        setValues({ ...values, tags: data })
       }
     })
   }
 
-  const showCategories = () => {
-    return categories.map((c, i) => {
+  const showTags = () => {
+    return tags.map((t, i) => {
       return (
         <button
-          onDoubleClick={() => deleteConfirm(c.slug)}
+          onDoubleClick={() => deleteConfirm(t.slug)}
           title='Double click to delete'
           key={i}
-          className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-2 mx-1'
+          className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-2 mx-1 '
         >
-          {c.name}
+          {t.name}
         </button>
       )
     })
   }
 
   const deleteConfirm = (slug) => {
-    let answer = window.confirm(
-      'Are you sure you want to delete this category?'
-    )
+    let answer = window.confirm('Are you sure you want to delete this tag?')
     if (answer) {
-      deleteCategory(slug)
+      deleteTag(slug)
     }
   }
 
-  const deleteCategory = (slug) => {
-    // console.log('delete', slug)
-    removeCategory(slug, token).then((data) => {
+  const deleteTag = (slug) => {
+    // console.log('delete', slug);
+    removeTag(slug, token).then((data) => {
       if (data.error) {
         console.log(data.error)
       } else {
@@ -107,7 +105,7 @@ const Category = () => {
     if (success) {
       return (
         <p className='flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3'>
-          Category is created
+          Tag is created
         </p>
       )
     }
@@ -116,8 +114,8 @@ const Category = () => {
   const showError = () => {
     if (error) {
       return (
-        <p className='flex items-center bg-red-400 text-white text-sm font-bold px-4 py-3-danger'>
-          Category already exist
+        <p className='flex items-center bg-red-400 text-white text-sm font-bold px-4 py-3'>
+          Tag already exist
         </p>
       )
     }
@@ -127,7 +125,7 @@ const Category = () => {
     if (removed) {
       return (
         <p className='flex items-center bg-red-400 text-white text-sm font-bold px-4 py-3'>
-          Category is removed
+          Tag is removed
         </p>
       )
     }
@@ -137,7 +135,7 @@ const Category = () => {
     setValues({ ...values, error: false, success: false, removed: '' })
   }
 
-  const newCategoryFom = () => (
+  const newTagForm = () => (
     <form onSubmit={clickSubmit}>
       <div className='relative h-10 input-component mb-5'>
         <label className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
@@ -146,7 +144,7 @@ const Category = () => {
 
         <input
           type='text'
-          className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500 '
+          className='w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500'
           onChange={handleChange}
           value={name}
           required
@@ -169,11 +167,11 @@ const Category = () => {
       {showError()}
       {showRemoved()}
       <div onMouseMove={mouseMoveHandler}>
-        {newCategoryFom()}
-        {showCategories()}
+        {newTagForm()}
+        {showTags()}
       </div>
     </>
   )
 }
 
-export default Category
+export default Tag
