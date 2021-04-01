@@ -15,7 +15,7 @@ const CategoryTag = () => {
               <Category />
             </div>
           </main>
-          <aside className='md:col-span-6 md:pt-0 p-2 border-2 border-blue-600'>
+          <aside className=''>
             <p>Tag</p>
           </aside>
         </div>

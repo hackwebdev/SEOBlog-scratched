@@ -238,6 +238,10 @@ TailwindCSS grid layout:
 
 59 Create category
 
+crud/Category.js
+    getCategories data.error undefined
+    Fix: setValues({ error: true })
+
 ```
 
 ```
