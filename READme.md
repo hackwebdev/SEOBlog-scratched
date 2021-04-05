@@ -248,6 +248,13 @@ Blog Schema (backend)
 - add blog route to server.js
 - blog controller
 
+Postman
+title           post title one
+body             lorem ipsum
+photo           photo.jpg
+categories      606575363d1b354ec53b81da
+tags            6065d8fb65fc3a13df92b546
+
 
 ```
 
