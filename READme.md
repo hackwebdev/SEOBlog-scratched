@@ -242,7 +242,12 @@ crud/Category.js
 
 Create Tags same procedure as Categories
 
-65. Blog Schema
+Blog Schema (backend)
+- blog model / schema
+- blog route
+- add blog route to server.js
+- blog controller
+
 
 ```
 
